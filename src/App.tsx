@@ -5,6 +5,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import MoviesPage from "./pages/MoviesPage";
 import MovieCast from "./components/MovieCast";
 import MovieReviews from "./components/MovieReviews";
+import MovieDetailsPage from "./pages/MovieDetailsPage";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/movies" element={<MoviesPage />} />
-        <Route path="/movies/:movieId" element={<MoviesPage />}>
+        <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
           <Route path="cast" element={<MovieCast />} />
           <Route path="reviews" element={<MovieReviews />} />
         </Route>

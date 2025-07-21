@@ -1,12 +1,7 @@
 import { Outlet } from "react-router";
 
 function MovieReviews() {
-  return (
-    <div>
-      MovieReviews
-      <Outlet />
-    </div>
-  );
+  return <div>MovieReviews</div>;
 }
 
 export default MovieReviews;
