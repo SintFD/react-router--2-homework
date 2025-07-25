@@ -1,5 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import MovieList from "../components/MovieList";
+
+type Movie = {
+  title: string;
+  poster_path: string;
+  id: number;
+};
 
 const url = "https://api.themoviedb.org/3/trending/movie/day";
 
@@ -11,7 +18,7 @@ const options = {
 };
 
 function HomePage() {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState<Movie[]>([]);
   useEffect(() => {
     const getMovies = async () => {
       const { data } = await axios.get(url, options);
@@ -21,15 +28,11 @@ function HomePage() {
     getMovies();
   }, []);
 
-  console.log(movies);
+  movies;
 
   return (
     <div>
-      <ul>
-        {movies.map((movie) => (
-          <li>{movie.title}</li>
-        ))}
-      </ul>
+      <MovieList movies={movies} />
     </div>
   );
 }

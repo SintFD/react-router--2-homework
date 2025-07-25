@@ -14,3 +14,15 @@ header {
 .active {
   color: red;
 }
+
+li {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.li {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
